@@ -46,7 +46,9 @@ def get_scale(line, rot_line):
     print('dirs')
     print(u)
     print(v)
-    s = np.exp( -(u@v)**2 )
+    print('dot = %f' % (u@v))
+    s = (u@v)**2
+    #s = np.exp( (u@v)**2 )
     print(s, end='\n\n')
     return np.diag(np.array([s,s,s]))
 
@@ -201,4 +203,4 @@ scheme = load_scheme('Penthera_3T.txt')
 #print( E(scheme[0][0:3], scheme[0][3], voxel) )
 #print( get_acquisition(scheme, 0.0, voxel) )
 
-plot_angles(0, 0, 10)
+plot_angles(0, 0, 50)
